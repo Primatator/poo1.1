@@ -1,7 +1,7 @@
 <?php
-​
+
 class Magicien extends Personnage {
-​
+
     /**
      * Permet d'initialiser les paramètres au moment de la création de notre personnage
      * parent:: Fait appel au code de la méthode parente
@@ -13,31 +13,25 @@ class Magicien extends Personnage {
     function __construct(string $nom, int $force, int $hp = 100, int $niveau = 1) {
         parent::__construct($nom, $force, $hp, $niveau);
     }
-​
+    
     /**
-     * Attaque un personnage en apellant sa méthode spécifique
-     * @param Personnage $personnage : Référence personnage "cible" (objet)
+     * Attaque un personnage et tente de lui infliger un certain nombre de points de dégats
+     * @param Personnage $personnage : Personnage "cible" (objet)
      */
     function attaquer(Cible $personnage) {
-        $this->lancerUnSort($personnage);
+        //echo $this->nom . " attaque " . $personnage->getNom() . "<br>";
+        $this->lancerSort($personnage);
     }
-​
-    /**
-     * Déclenche l'attaque spécifique de ce sous-type de personnage (ici frapper())
-     * @param Personnage $perso : Référence personnage "cible" (objet)
-     */
-    function lancerUnSort(Cible $perso) {
- 
-        echo "Je lance un sort sur " . $perso->getNom() ."<br>";
-​
+
+    function lancerSort(Cible $perso) {
+
         $degats = $this->force;
         if($perso instanceof Guerrier) {
             // echo "Dégats supplémentaires";
             $degats += 8;
         }
-​
+
         $perso->subirDegat($degats);
     }
-​
+
 }
-?>

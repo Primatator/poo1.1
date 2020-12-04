@@ -1,7 +1,7 @@
 <?php
-​
+
 class Guerrier extends Personnage {
-​
+
     /**
      * Permet d'initialiser les paramètres au moment de la création de notre personnage
      * parent:: Fait appel au code de la méthode parente
@@ -13,7 +13,7 @@ class Guerrier extends Personnage {
     function __construct(string $nom, int $force, int $hp = 100, int $niveau = 1) {
         parent::__construct($nom, $force, $hp, $niveau);
     }
-​
+
     /**
      * Attaque un personnage en apellant sa méthode spécifique
      * @param Personnage $personnage : Référence personnage "cible" (objet)
@@ -21,23 +21,20 @@ class Guerrier extends Personnage {
     function attaquer(Cible $personnage) {
         $this->frapper($personnage);
     }
-​
+
     /**
      * Déclenche l'attaque spécifique de ce sous-type de personnage (ici frapper())
      * @param Personnage $perso : Référence personnage "cible" (objet)
      */
     function frapper(Cible $perso) {
- 
-        echo "Je frappe " . $perso->getNom() ."<br>";
-​
+
         $degats = $this->force;
         if($perso instanceof Archer) {
             // echo "Dégats supplémentaires";
             $degats += 5;
         }
-​
+
         $perso->subirDegat($degats);
     }
-​
+
 }
-?>

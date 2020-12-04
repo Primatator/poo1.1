@@ -1,26 +1,6 @@
 <?php
 
-interface Cible  {
-    function subirDegats(int $degats);
+interface Cible {
 
-
+    function subirDegat(int $degats);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
