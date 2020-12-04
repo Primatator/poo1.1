@@ -1,6 +1,6 @@
 <?php
 require_once "Cible.php";
-​require_once "Attaquant.php";
+require_once "Attaquant.php";
 require_once "Personnage.php";
 require_once "Guerrier.php";
 require_once "Archer.php";
