@@ -33,7 +33,7 @@ class Archer extends Personnage {
         $degats = $this->force;
         if($perso instanceof Magicien) {
             // echo "Dégats supplémentaires";
-            $degats += 5;
+            $degats += 4;
         }
 ​
         $perso->subirDegat($degats);

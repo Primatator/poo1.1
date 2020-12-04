@@ -8,12 +8,14 @@ class Creature implements Attaquant, Cible {
     function __construct($race, $hp=250){
         $this->race=$race;
         $this->hp=$hp;
+    }
 
-
+    function caracteristiques() {
+        return $this->race . " a " . $this->hp . " points de santé<br>";
     }
 
     function attaquer(Cible $perso){
-        echo "Creature" .$this->race. " attaque!";
+        echo "Creature" .$this->race. " attaque!<br>";
     }
 
     function subirDegats(int $degats) {

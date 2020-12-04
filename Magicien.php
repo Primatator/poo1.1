@@ -33,7 +33,7 @@ class Magicien extends Personnage {
         $degats = $this->force;
         if($perso instanceof Guerrier) {
             // echo "Dégats supplémentaires";
-            $degats += 5;
+            $degats += 8;
         }
 ​
         $perso->subirDegat($degats);

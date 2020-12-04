@@ -40,12 +40,15 @@ abstract class Personnage implements Attaquant, Cible {
      */
      function subirDegat(int $degats){
          $this->pointsSante-= $degats;
-         if($this->pointsSante-=0){
+         if($this->pointsSante<=0){
              $this->mort=true;
          }
 
 
      }
+     function levelUp() {
+        $this->niveau++;
+    }
 
     }
 ​
